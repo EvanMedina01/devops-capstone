@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+
+
+
+  name: ais-ifm2
+
+
+
+  labels:
+
+
+
+    app: ais
+
+
+
+spec:
+
+
+
+  replicas: 1
+
+
+
+  selector:
+
+
+
+    matchLabels:
+
+      app: ais
+
+      tier: web
+
+
+
+  template:
+
+
+
+    metadata:
+
+
+
+      labels:
+
+       app: ais
+
+       tier: web
+
+
+
+    spec:
+
+
+
+      containers:
+
+
+
+      - name: ais
+
+
+
+        image: edu123/docker-image:42a5b0192c7be4bcc06703dbf1d4d6a8f5a3e6a8
+
+
+
+        ports:
+
+
+
+        - containerPort: 8090
+
+
+
+
